@@ -6,7 +6,7 @@ services:
     build: ./frontend
     ports:
       - 3000:3000
-    platform: linux/x86_64
+    platform: linux/arm64/v8
     working_dir: /app-frontend
     depends_on:
       backend:
@@ -23,7 +23,7 @@ services:
     build: ./backend
     ports:
       - 3001:3001
-    platform: linux/x86_64
+    platform: linux/arm64/v8
     working_dir: /app-backend
     depends_on:
       db:
@@ -42,7 +42,7 @@ services:
   db:
     container_name: ng_db
     image: postgres:15.1
-    platform: linux/x86_64
+    platform: linux/arm64/v8
     ports:
       - 3002:5432
     user: postgres
